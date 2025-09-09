@@ -27,6 +27,7 @@
   - Grupo de Segurança do Bastion Host: com permissão de entrada na porta 22 (SSH) para o meu IP.
  
 
+
   <img src="https://github.com/user-attachments/assets/5a56b25a-2e94-4f09-8d8a-366b71a89a9b"  alt="" width="700"/>
 </p>
 
