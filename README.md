@@ -48,8 +48,14 @@
 - Criação do EFS montado nas instâncias, para armazenar os arquivos de forma persistente nas instâncias.
 
 
-<img src=""  alt="" width="700"/>
+<img src="https://github.com/user-attachments/assets/6e592e6f-cf5d-49a8-bbad-5b8ec1b7bc0d"  alt="" width="700"/>
 </p>
+
+
+### 5. Lauch Template
+
+- Foi usado o Launch Template para a criação automática de instâncias e o script de UserData para instalação do Docker, Docker compode e deploy do Wordpress, com o objetivo de automatizar toda a configuração.
+- [Ver script aqui] (deployment/user-data.sh)
 
 
 
