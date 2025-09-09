@@ -39,10 +39,17 @@
 - Criação do banco de dados MySQL para o armazenamento de dados do Wordpress, nomeado de `database-1` com o usuário `iasmyn` e utilizando uma instância de tamanho t3.micro.
 
 
-<img src=""  alt="" width="700"/>
+<img src="https://github.com/user-attachments/assets/10c85030-3992-4a3d-b932-d4331a698cbc"  alt="" width="700"/>
 </p>
 
 
+### 4. EFS 
+
+- Criação do EFS montado nas instâncias, para armazenar os arquivos de forma persistente nas instâncias.
+
+
+<img src=""  alt="" width="700"/>
+</p>
 
 
 
