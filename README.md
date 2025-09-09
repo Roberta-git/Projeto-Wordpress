@@ -19,7 +19,8 @@
 
 
 ### 2. Grupos de Segurança
-- Criação e configuração dos grupos de seguraça específicos:
+
+- Criação e configuração dos grupos de seguraça específicos para o controle do tráfego da rede:
   - Grupo de Segurança da instância (Ec2): com permissão de entrada nas portas 80 (HTTP) para o Load Balancer, 22 (SSH) para o meu ip, 2024 (NFS) para o grupo de segurança do EFS, e 3306 (MySQL do RDS) para o grupo de segurança do RDS.
   - Grupo de Segurança do RDS: com permissão de entrada na porta 3306 (MySQL) para o grupo de segurança da Ec2.
   - Grupo de Segurança do EFS: com permissão de entrada na porta 2049 (NFS) para o grupo de segurança da EC2.
@@ -30,6 +31,18 @@
 
   <img src="https://github.com/user-attachments/assets/5a56b25a-2e94-4f09-8d8a-366b71a89a9b"  alt="" width="700"/>
 </p>
+
+
+
+### 3. Banco de Dados (RDS)
+
+- Criação do banco de dados MySQL para o armazenamento de dados do Wordpress, nomeado de `database-1` com o usuário `iasmyn` e utilizando uma instância de tamanho t3.micro.
+
+
+<img src=""  alt="" width="700"/>
+</p>
+
+
 
 
 
