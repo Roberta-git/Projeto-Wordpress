@@ -114,3 +114,9 @@ colocar arquivo de script do docker compose
 <img src="https://github.com/user-attachments/assets/b106ab8d-dfaf-4197-bf06-64bc162eddf1"  alt="" width="700"/>
 </p>
 
+
+
+### Considerações finais
+
+Com a realização do projeto, foi possível aprimorar meus conhecimentos nos serviços de armazenamentos de daods do RDS e EFS  e automação User Data com o do Wordpress e Docker. 
+
