@@ -104,7 +104,7 @@ colocar arquivo de script do docker compose
 -Verificado o status de "healthy" no Target Group.
 
 
-<img src=""  alt="" width="700"/>
+<img src="https://github.com/user-attachments/assets/0a6d25bd-8e69-4ec4-bfc8-12988df37393"  alt="" width="700"/>
 </p>
 
 
