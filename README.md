@@ -96,7 +96,8 @@ colocar arquivo de script do docker compose
 `HTTP/1.1 200 OK`.
 
 
-<img src=""  alt="" width="700"/>
+<img src="https://github.com/user-attachments/assets/3beddfd5-c690-4791-9945-99c4b8248b2d"  alt="" width="700"/>
+
 </p>
 
 
