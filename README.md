@@ -84,9 +84,32 @@ colocar arquivo de script do docker compose
 
 
 
-<img src=""  alt="" width="700"/>
+<img src="https://github.com/user-attachments/assets/bafbe602-c526-4de8-8ef1-89f74e508c8a"  alt="" width="700"/>
 </p>
 
 
 
+
+### 8. Testes e verificação das configurações
+
+- Foi realiazado o teste de acesso via `curl -I http://localhost:80/` no ssh da instância, retornando o status code de 
+`HTTP/1.1 200 OK`.
+
+
+<img src=""  alt="" width="700"/>
+</p>
+
+
+-Verificado o status de "healthy" no Target Group.
+
+
+<img src=""  alt="" width="700"/>
+</p>
+
+
+Acesso ao Wordpress através do DNS público do Load Balancer.
+
+
+<img src=""  alt="" width="700"/>
+</p>
 
