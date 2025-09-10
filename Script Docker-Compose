@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "80:80"
+    environment:
+      WORDPRESS_DB_HOST: END point do DNS
+      WORDPRESS_DB_USER: 
+      WORDPRESS_DB_PASSWORD: 
+      WORDPRESS_DB_NAME: database-1
+    volumes:
+      - /mnt/efs/wordpress_data:/var/www/html
