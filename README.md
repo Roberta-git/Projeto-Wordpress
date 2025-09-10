@@ -3,7 +3,9 @@
 > Na documentação a seguir, será detalhado o passo a passo para a implementação do Wordpress usando Docker em uma instância da AWS, juntamente com os requisitos necessários.
 
 
-## Índice
+
+
+### Índice
 
  1. Configuração do Docker e Docker Compose
  2. Criação da VPC e configuração de rede
@@ -15,6 +17,16 @@
  8. Testes e verificação das configurações
  9. Considerações finais
 
+
+
+### Ferramentas utilizadas
+- Docker e Docker Compose
+- Amazon EC2
+- Amazon VPC
+- Amazon RDS
+- Amazon EFS
+- Application Load Balancer e Auto Scaling Group
+- Launch Template e User Data 
 
 
 ### 1. Configuração do Docker e Docker Compose
