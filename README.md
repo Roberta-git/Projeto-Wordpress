@@ -57,10 +57,16 @@
 - Foi usado o Launch Template para a criação automática de instâncias e o script de UserData para instalação do Docker, Docker compode e deploy do Wordpress, com o objetivo de automatizar toda a configuração.
 
 
-<img src=""  alt="" width="700"/>
+<img src="https://github.com/user-attachments/assets/75d871c0-b0eb-4736-83c7-8ca85ea4599f"  alt="" width="700"/>
 </p>
 
 - [Ver script aqui] (deployment/user-data.sh)
+
+
+### 6. Auto Scaling Group e Load Balancer
+
+- Foi criado o ASG para criar e remover instâncias conforme o tráfego, associado às subnets privadas, com capacidade desejada de duas instâncias.
+- Além disso foi configuraedo o Application Load Balancer e associado ao Target Group, tendo o exame de saúde com o caminho`/` e códigos de sucesso `200,302`.
 
 
 
