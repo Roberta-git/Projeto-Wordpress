@@ -6,7 +6,13 @@
 ---
 
 
-### 1. Criação da VPC e configuração de rede
+### 1. Configuração do Docker e Docker Compose
+
+- Primeiramente, foi instalado e feito a configuração do ambiente Docker para rodar o Wordpress, com o arquivo `docker-compose.yml` que controla o containr do Wordpress com as variáveis de ambiente de conexão ao RDS e usa o EFS para o armazenameto dos dados.
+  
+colocar arquivo de script do docker compose 
+
+### 2. Criação da VPC e configuração de rede
 
 - Foi criado a VPC para a organização dos recursos.
  - Criação de subnets, sendo duas públicas (com Gateway de internet, sendo associadas ao Load Balancer e ao Bastion Host), e duas privadas (para a instância e o EDS).
@@ -18,7 +24,7 @@
 </p>
 
 
-### 2. Grupos de Segurança
+### 3. Grupos de Segurança
 
 - Criação e configuração dos grupos de seguraça específicos para o controle do tráfego da rede:
   - Grupo de Segurança da instância (Ec2): com permissão de entrada nas portas 80 (HTTP) para o Load Balancer, 22 (SSH) para o meu ip, 2024 (NFS) para o grupo de segurança do EFS, e 3306 (MySQL do RDS) para o grupo de segurança do RDS.
@@ -34,7 +40,7 @@
 
 
 
-### 3. Banco de Dados (RDS)
+### 4. Banco de Dados (RDS)
 
 - Criação do banco de dados MySQL para o armazenamento de dados do Wordpress, nomeado de `database-1` com o usuário `iasmyn` e utilizando uma instância de tamanho t3.micro.
 
@@ -43,7 +49,7 @@
 </p>
 
 
-### 4. EFS 
+### 5. EFS 
 
 - Criação do EFS montado nas instâncias, para armazenar os arquivos de forma persistente nas instâncias.
 
@@ -52,7 +58,7 @@
 </p>
 
 
-### 5. Lauch Template e User Data
+### 6. Lauch Template e User Data
 
 - Foi usado o Launch Template para a criação automática de instâncias e o script de UserData para instalação do Docker, Docker compode e deploy do Wordpress, com o objetivo de automatizar toda a configuração.
 
@@ -60,13 +66,25 @@
 <img src="https://github.com/user-attachments/assets/75d871c0-b0eb-4736-83c7-8ca85ea4599f"  alt="" width="700"/>
 </p>
 
-- [Ver script aqui] (deployment/user-data.sh)
+- colocar arquivo de script do User data
 
 
-### 6. Auto Scaling Group e Load Balancer
+### 7. Auto Scaling Group e Load Balancer
 
 - Foi criado o ASG para criar e remover instâncias conforme o tráfego, associado às subnets privadas, com capacidade desejada de duas instâncias.
+
+
+
+<img src=""  alt="" width="700"/>
+</p>
+
+
 - Além disso foi configuraedo o Application Load Balancer e associado ao Target Group, tendo o exame de saúde com o caminho`/` e códigos de sucesso `200,302`.
+
+
+
+<img src=""  alt="" width="700"/>
+</p>
 
 
 
