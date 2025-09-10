@@ -52,9 +52,14 @@
 </p>
 
 
-### 5. Lauch Template
+### 5. Lauch Template e User Data
 
 - Foi usado o Launch Template para a criação automática de instâncias e o script de UserData para instalação do Docker, Docker compode e deploy do Wordpress, com o objetivo de automatizar toda a configuração.
+
+
+<img src=""  alt="" width="700"/>
+</p>
+
 - [Ver script aqui] (deployment/user-data.sh)
 
 
