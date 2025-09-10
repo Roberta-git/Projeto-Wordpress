@@ -32,7 +32,7 @@
 ### 1. Configuração do Docker e Docker Compose
 
 - Primeiramente, foi instalado e feito a configuração do ambiente Docker para rodar o Wordpress, com o arquivo `docker-compose.yml` que controla o containr do Wordpress com as variáveis de ambiente de conexão ao RDS e usa o EFS para o armazenameto dos dados.
-  
+- [Script Docker Compose](https://github.com/Roberta-git/Projeto-Wordpress/blob/main/Script%20Docker-Compose)  
 
 
 ### 2. Criação da VPC e configuração de rede
@@ -89,7 +89,7 @@
 <img src="https://github.com/user-attachments/assets/75d871c0-b0eb-4736-83c7-8ca85ea4599f"  alt="" width="700"/>
 </p>
 
-
+- [Script User Data](https://github.com/Roberta-git/Projeto-Wordpress/blob/main/Script%20User%20Data)
 
 ### 7. Auto Scaling Group e Load Balancer
 
