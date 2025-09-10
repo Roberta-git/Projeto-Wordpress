@@ -35,7 +35,7 @@ colocar arquivo de script do docker compose
  
 
 
-  <img src="https://github.com/user-attachments/assets/5a56b25a-2e94-4f09-8d8a-366b71a89a9b"  alt="" width="700"/>
+<img src="https://github.com/user-attachments/assets/5a56b25a-2e94-4f09-8d8a-366b71a89a9b"  alt="" width="700"/>
 </p>
 
 
