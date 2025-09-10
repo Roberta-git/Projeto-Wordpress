@@ -1,0 +1,51 @@
+#!/bin/bash
+# Atualiza o sistema
+yum update -y || (apt-get update -y && apt-get upgrade -y)
+
+# Instala Docker
+if command -v yum &>/dev/null; then
+  yum install -y docker
+  systemctl enable docker
+  systemctl start docker
+  usermod -aG docker ec2-user
+elif command -v apt-get &>/dev/null; then
+  apt-get install -y docker.io
+  systemctl enable docker
+  systemctl start docker
+  usermod -aG docker ubuntu
+fi
+
+# Instala Docker Compose
+curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+
+# Monta o Amazon EFS 
+umount /mnt/efs || true
+mkdir -p /mnt/efs
+mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 fs-0e51ea70fd4a35437.efs.us-east-2.amazonaws.com:/ /mnt/efs
+
+# Cria docker-compose.yml com WordPress + RDS + EFS
+cat <<EOF > /home/ec2-user/docker-compose.yml
+version: '3.8'
+services:
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "80:80"
+    environment:
+      WORDPRESS_DB_HOST: database-1.cbewq0omqm3q.us-east-2.rds.amazonaws.com
+      WORDPRESS_DB_USER: 
+      WORDPRESS_DB_PASSWORD: 
+      WORDPRESS_DB_NAME: database-1
+    volumes:
+      - /mnt/efs/wordpress_data:/var/www/html
+EOF
+
+# Permissões e execução
+chown ec2-user:ec2-user /home/ec2-user/docker-compose.yml
+
+cd /home/ec2-user
+/usr/local/bin/docker-compose up -d
+
+# Aguarda 30 segundos para garantir inicialização
+sleep 30
