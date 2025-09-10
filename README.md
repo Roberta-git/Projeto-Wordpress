@@ -111,6 +111,6 @@ colocar arquivo de script do docker compose
 - Acesso ao Wordpress através do DNS público do Load Balancer.
 
 
-<img src="https://github.com/user-attachments/assets/9c32e805-aabe-4389-8918-801ca6adb849"  alt="" width="700"/>
+<img src="https://github.com/user-attachments/assets/5ae0adae-f2d6-470a-892d-cfde0f4d02cf"  alt="" width="700"/>
 </p>
 
