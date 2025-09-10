@@ -80,6 +80,7 @@ colocar arquivo de script do docker compose
 
 
 - Além disso foi configuraedo o Application Load Balancer e associado ao Target Group, tendo o exame de saúde com o caminho`/` e códigos de sucesso `200,302`.
+    - Um fator importante é que a instância seja apresentada como saudável.
 
 
 
