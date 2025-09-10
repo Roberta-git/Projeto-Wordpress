@@ -31,7 +31,7 @@
 
 ### 1. Configuração do Docker e Docker Compose
 
-- Primeiramente, foi instalado e feito a configuração do ambiente Docker para rodar o Wordpress, com o arquivo `docker-compose.yml` que controla o containr do Wordpress com as variáveis de ambiente de conexão ao RDS e usa o EFS para o armazenameto dos dados.
+- Primeiramente, foi instalado e feito a configuração do ambiente Docker para rodar o Wordpress, com o arquivo `docker-compose.yml` que controla o container do Wordpress com as variáveis de ambiente de conexão ao RDS e usa o EFS para o armazenameto dos dados.
 - [Script Docker Compose](https://github.com/Roberta-git/Projeto-Wordpress/blob/main/Script%20Docker-Compose)  
 
 
@@ -40,7 +40,7 @@
 - Foi criado a VPC para a organização dos recursos.
  - Criação de subnets, sendo duas públicas (com Gateway de internet, sendo associadas ao Load Balancer e ao Bastion Host), e duas privadas (para a instância e o EDS).
 - Foi configurado o Internet Gateway e anexado à VPC e o NAT Gateway para o aesso das subnets privadas à internet.
-- Criação da Tabela de Rotas, com rota padrão (0.0.0.0/0) para as subnets públicas e para as privadas.
+- Criação da Tabela de Rotas, com rota padrão (`0.0.0.0/0`) para as subnets públicas e para as privadas.
 
 
  <img src="https://github.com/user-attachments/assets/04f5dd40-9cd7-4fac-84a8-4fc32179129b"  alt="" width="700"/>
@@ -50,11 +50,11 @@
 ### 3. Grupos de Segurança
 
 - Criação e configuração dos grupos de seguraça específicos para o controle do tráfego da rede:
-  - Grupo de Segurança da instância (Ec2): com permissão de entrada nas portas 80 (HTTP) para o Load Balancer, 22 (SSH) para o meu ip, 2024 (NFS) para o grupo de segurança do EFS, e 3306 (MySQL do RDS) para o grupo de segurança do RDS.
-  - Grupo de Segurança do RDS: com permissão de entrada na porta 3306 (MySQL) para o grupo de segurança da Ec2.
-  - Grupo de Segurança do EFS: com permissão de entrada na porta 2049 (NFS) para o grupo de segurança da EC2.
-  - Grupo de Segurança do Load Balancer: com permissão de entrada na porta 80 (HTTP) para qualquer IP.
-  - Grupo de Segurança do Bastion Host: com permissão de entrada na porta 22 (SSH) para o meu IP.
+  - Grupo de Segurança da instância (Ec2): com permissão de entrada nas portas `80` (HTTP) para o Load Balancer, `22` (SSH) para o meu ip, `2024` (NFS) para o grupo de segurança do EFS, e `3306` (MySQL do RDS) para o grupo de segurança do RDS.
+  - Grupo de Segurança do RDS: com permissão de entrada na porta `3306` (MySQL) para o grupo de segurança da Ec2.
+  - Grupo de Segurança do EFS: com permissão de entrada na porta `2049` (NFS) para o grupo de segurança da EC2.
+  - Grupo de Segurança do Load Balancer: com permissão de entrada na porta `80` (HTTP) para qualquer IP.
+  - Grupo de Segurança do Bastion Host: com permissão de entrada na porta `22` (SSH) para o meu IP.
  
 
 
@@ -74,7 +74,7 @@
 
 ### 5. EFS 
 
-- Criação do EFS montado nas instâncias, para armazenar os arquivos de forma persistente nas instâncias.
+- Criação do EFS montado nas instâncias, para armazenar os arquivos de forma persistente.
 
 
 <img src="https://github.com/user-attachments/assets/6e592e6f-cf5d-49a8-bbad-5b8ec1b7bc0d"  alt="" width="700"/>
@@ -83,7 +83,7 @@
 
 ### 6. Lauch Template e User Data
 
-- Foi usado o Launch Template para a criação automática de instâncias e o script de UserData para instalação do Docker, Docker compode e deploy do Wordpress, com o objetivo de automatizar toda a configuração.
+- Foi usado o Launch Template para a criação automática de instâncias e o script de UserData para instalação do Docker, Docker compose e deploy do Wordpress, com o objetivo de automatizar toda a configuração.
 
 
 <img src="https://github.com/user-attachments/assets/75d871c0-b0eb-4736-83c7-8ca85ea4599f"  alt="" width="700"/>
@@ -101,7 +101,7 @@
 </p>
 
 
-- Além disso foi configuraedo o Application Load Balancer e associado ao Target Group, tendo o exame de saúde com o caminho`/` e códigos de sucesso `200,302`.
+- Além disso foi configurado o Application Load Balancer e associado ao Target Group, tendo o exame de saúde com o caminho`/` e códigos de sucesso `200,302`.
     - Um fator importante é que a instância seja apresentada como saudável.
 
 
@@ -140,5 +140,5 @@
 
 ### Considerações finais
 
-Com a realização do projeto, foi possível aprimorar meus conhecimentos nos serviços de armazenamentos de daods do RDS e EFS  e automação User Data com o do Wordpress e Docker. 
+Com a realização do projeto, foi possível aprimorar meus conhecimentos nos serviços de armazenamentos de dados do RDS e EFS  e automação User Data com o do Wordpress e Docker. 
 
